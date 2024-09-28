@@ -1,11 +1,14 @@
-import mongoose from "mongoose";
-import dotenv from "dotenv"
 
-dotenv.config()
-const mongoDB=process.env.MONGO_URL
+
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
+const mongoDB = process.env.MONGO_URL;
+
 const connectDB = async () => {
     try {
-        await mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
+        await mongoose.connect(mongoDB); // Removed deprecated options
         console.log("MongoDB connected successfully.");
     } catch (err) {
         console.error("MongoDB connection error:", err);

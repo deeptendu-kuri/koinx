@@ -8,11 +8,11 @@ import cors from "cors";
 
 
 app.use(cors());
+connectDB()
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 dotenv.config()
-connectDB()
 app.use('/',router)
 
 const PORT=process.env.PORT;
