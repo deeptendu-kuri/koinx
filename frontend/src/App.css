@@ -1,38 +1,103 @@
-.App {
+/* App.css */
+.container {
+  padding: 50px;
+  max-width: 800px; /* Increase maximum width for larger screens */
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  display: flex; /* Use flexbox for main container */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+h1 {
+  color: #333;
   text-align: center;
+  margin-bottom: 10px; /* Reduce margin at the bottom */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.input-section {
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  width: 100%; /* Full width for input section */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.output-section {
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack items vertically by default */
+  align-items: flex-start; /* Align items at the start */
+  width: 100%; /* Full width for output section */
+  margin-top: 10px; /* Space above output section */
+}
+
+/* Adjust flex behavior on larger screens */
+@media (min-width: 600px) {
+  .container {
+    flex-direction: row; /* Change to row layout for larger screens */
+    justify-content: space-between; /* Space between input and output sections */
+  }
+  .input-section {
+    width: 50%; /* Take up half the width */
+  }
+  .output-section {
+    width: 45%; /* Take up slightly less than half the width */
+    margin-left: 20px; /* Add margin between sections */
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+input[type="file"],
+input[type="datetime-local"],
+button {
+  display: block;
+  width: 100%; /* Full width for responsiveness */
+  max-width: 300px; /* Limit the maximum width */
+  padding: 8px; /* Reduced padding for tighter input */
+  margin: 5px 0; /* Reduced margin between inputs */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #28a745;
   color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px; /* Add slight margin above button */
+  width: fit-content;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #218838;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+  color: green;
+  text-align: center;
+  margin: 5px 0; /* Reduce margin */
+}
+
+h2 {
+  margin-top: 10px; /* Reduced margin */
+  color: #333;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%; /* Full width for the list */
+}
+
+li {
+  padding: 5px;
+  border: 1px solid #ddd;
+  margin: 5px 0;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.timeDate {
+  margin-top: 10px;
 }

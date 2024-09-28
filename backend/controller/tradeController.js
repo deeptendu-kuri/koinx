@@ -24,6 +24,7 @@ export const uploadCSV = (req, res) => {
         })
         .on("end", async () => {
             try {
+                await Trade.deleteMany({})
                 await Trade.insertMany(results);
                 res.status(200).send({ message: "Trades uploaded successfully" });
             } catch (err) {
