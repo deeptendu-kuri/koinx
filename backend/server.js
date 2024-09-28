@@ -3,6 +3,9 @@ const app = express();
 import router from "./routes/router.js"
 import connectDB from "./database/dbConnection.js"
 import dotenv from "dotenv";
+import cors from "cors";
+app.use(cors());
+
 
 dotenv.config()
 connectDB()
